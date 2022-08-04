@@ -147,5 +147,10 @@
             @include adaptivFont(14,18)
         }
     }
+    .license{
+        &__right-text{
+            margin-left: 10px;
+        }
+    }
 }
 
