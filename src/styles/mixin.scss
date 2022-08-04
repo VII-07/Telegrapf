@@ -1,0 +1,40 @@
+@import 'colors';
+
+$maxWidth: 1440;
+@mixin adaptivFont($pcSize, $mobSize) {
+	$addSize: $pcSize - $mobSize;
+	$maxWidth: $maxWidth - 320;
+	font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+@mixin normalText {
+    font-weight: 300;
+    @include adaptivFont(18,14);
+    line-height: 28px;
+    mix-blend-mode: normal;
+    opacity: 0.8;
+    color: $blue;
+}
+@mixin litleText {
+    @include normalText;
+    @include adaptivFont(16,14);
+    line-height: 26px;
+}
+@mixin button {
+    color: #FFFFFF;
+    font-weight: 700;
+    @include adaptivFont(14,13);
+    line-height: 16px;
+    padding: 15px;
+    border-radius: 23px;
+    border: 0;
+    background: $red;
+    cursor: pointer;
+}
+@mixin title {
+    font-weight: 500;
+    @include adaptivFont(60,30);
+    line-height: 85px;
+    color: $blue;
+    margin-bottom: 20px;
+}
+
